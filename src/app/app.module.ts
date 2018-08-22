@@ -6,17 +6,21 @@ import { CreatorsComponent } from './components/creators/creators.component';
 import {FormsModule} from '@angular/forms';
 import { CreatorDetailComponent } from './components/creator-detail/creator-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatorsComponent,
     CreatorDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

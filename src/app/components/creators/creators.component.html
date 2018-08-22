@@ -1,9 +1,8 @@
-<ul class="creators">
-  <li *ngFor="let creator of creators"
-      [class.selected]="selectedCreator?.id === creator.id"
-      [ngClass]="{ 'selected': selectedCreator?.id == creator.id }"
-      (click)=onSelect(creator)><span class="badge">{{creator.id}}</span>
-    <span class="name">{{creator.name}}</span></li>
+<h2>My Creators</h2>
+<ul class="heroes">
+  <li *ngFor="let creator of creators">
+    <a routerLink="/detail/{{creator.id}}">
+      <span class="badge">{{creator.id}}</span> {{creator.name}}
+    </a>
+  </li>
 </ul>
-
-<app-creator-detail [creator]="selectedCreator"></app-creator-detail>
