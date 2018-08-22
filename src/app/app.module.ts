@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { CreatorsComponent } from './components/creators/creators.component';
 import {FormsModule} from '@angular/forms';
 import { CreatorDetailComponent } from './components/creator-detail/creator-detail.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatorsComponent,
-    CreatorDetailComponent
+    CreatorDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

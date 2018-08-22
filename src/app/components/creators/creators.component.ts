@@ -17,10 +17,14 @@ export class CreatorsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.creators = this.creatorService.getCreators();
+    this.getCreators();
   }
 
   onSelect(creator: Creator) {
     this.selectedCreator = creator;
+  }
+
+  getCreators(): void {
+    this.creatorService.getCreators().subscribe(creators => this.creators = creators)
   }
 }
