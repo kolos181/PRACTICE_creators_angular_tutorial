@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Creator} from '../entities/Creator';
-import {CREATORS} from '../mockDatabase/mock-creators';
+import {CreatorService} from '../../services/creator.service';
 
 @Component({
   selector: 'app-creators',
@@ -9,14 +9,15 @@ import {CREATORS} from '../mockDatabase/mock-creators';
 })
 export class CreatorsComponent implements OnInit {
 
-  creators = CREATORS;
+  creators: Creator[];
 
   selectedCreator: Creator;
 
-  constructor() {
+  constructor(private creatorService: CreatorService) {
   }
 
   ngOnInit() {
+    this.creators = this.creatorService.getCreators();
   }
 
   onSelect(creator: Creator) {
