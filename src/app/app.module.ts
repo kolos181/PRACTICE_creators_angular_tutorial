@@ -11,6 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './services/in-memory-data.service';
+import { CreatorSearchComponent } from './components/creator-search/creator-search.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
     CreatorsComponent,
     CreatorDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreatorSearchComponent
   ],
   imports: [
     BrowserModule,

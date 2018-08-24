@@ -1,8 +1,20 @@
 <h2>My Creators</h2>
-<ul class="heroes">
+<div>
+  <label>Creator name:
+    <input #creatorName/>
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(creatorName.value); creatorName.value=''">
+    add
+  </button>
+</div>
+<ul class="creators">
   <li *ngFor="let creator of creators">
     <a routerLink="/detail/{{creator.id}}">
       <span class="badge">{{creator.id}}</span> {{creator.name}}
     </a>
+    <button class="delete" title="delete creator"
+            (click)="delete(creator)">x
+    </button>
   </li>
 </ul>

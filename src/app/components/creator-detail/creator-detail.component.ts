@@ -26,6 +26,10 @@ export class CreatorDetailComponent implements OnInit {
     this.creatorService.getCreator(id).subscribe(creator => this.creator = creator);
   }
 
+  save(): void {
+    this.creatorService.updateCreator(this.creator).subscribe(() => this.goBack());
+  }
+
   private goBack() {
     this.location.back();
   }

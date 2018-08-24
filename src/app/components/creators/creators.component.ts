@@ -22,4 +22,19 @@ export class CreatorsComponent implements OnInit {
   getCreators(): void {
     this.creatorService.getCreators().subscribe(creators => this.creators = creators)
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.creatorService.addCreator({ name } as Creator)
+      .subscribe(creator => {
+        this.creators.push(creator);
+      });
+  }
+
+  delete(creator: Creator): void {
+    this.creators = this.creators.filter(h => h !== creator);
+    this.creatorService.deleteCreator(creator).subscribe();
+  }
+
 }

@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Creator Search</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let creator of creators$ | async" >
+      <a routerLink="/detail/{{creator.id}}">
+        {{creator.name}}
+      </a>
+    </li>
+  </ul>
+</div>
